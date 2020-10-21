@@ -14,17 +14,17 @@ class Comidas {
 }
 
 class Comida {
-  int metid;
+  String mealId;
   DateTime dateStart;
   DateTime dateEnd;
-  int type;
+  String type;
   String name;
   String description;
   String imageUrl;
   int rating;
 
   Comida({
-    this.metid,
+    this.mealId,
     this.dateStart,
     this.dateEnd,
     this.type,
@@ -35,9 +35,9 @@ class Comida {
   });
 
   Comida.formJsonMap(Map<String, dynamic> json) {
-    metid = json['metid'];
-    dateStart = json['dateStart'];
-    dateEnd = json['dateEnd'];
+    mealId = json['mealId'];
+    dateStart = DateTime.parse(json['dateStart'].toString()).toLocal();
+    dateEnd = DateTime.parse(json['dateEnd'].toString()).toLocal();
     type = json['type'];
     name = json['name'];
     description = json['description'];

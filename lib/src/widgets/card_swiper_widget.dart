@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
-
-import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:evaluacion/src/models/comida_model.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 
 class CardSwiper extends StatelessWidget {
   final List<Comida> comidas;
@@ -22,14 +21,14 @@ class CardSwiper extends StatelessWidget {
           //comidas[index].metid = '${comida[index].metid}-tarjeta';
 
           return Hero(
-            tag: comidas[index].metid,
+            tag: comidas[index].mealId,
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(20.0),
                 child: GestureDetector(
                   onTap: () => Navigator.pushNamed(context, 'detalle',
                       arguments: comidas[index]),
                   child: FadeInImage(
-                    image: null, // NetworkImage(comidas[index].getPosterImg()),
+                    image:  NetworkImage(comidas[index].imageUrl),
                     placeholder: AssetImage('assets/img/no-image.jpg'),
                     fit: BoxFit.cover,
                   ),
