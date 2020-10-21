@@ -1,0 +1,10 @@
+{
+    "nombreApp" : "ListadoMain",
+    "rutas" : [
+        {
+            "ruta" : "listado",
+            "icon" : "food",
+            "texto": "Comidas"
+        }
+    ]
+}
